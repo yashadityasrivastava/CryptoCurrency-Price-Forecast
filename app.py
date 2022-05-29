@@ -1,11 +1,5 @@
 import datetime
-pip install numpy
-pip install matplotlib
-pip install pandas
-pip install keras
-pip install sklearn
-pip install yfinance
-pip install pandas_datareader
+conda install matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 #from pandas_datareader import data
