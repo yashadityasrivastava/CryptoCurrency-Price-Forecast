@@ -20,7 +20,7 @@ end_date = st.date_input(
      datetime.date(2022, 1, 1))
 
 #df = yf.download(user_input)
-df = web.DataReader(user_input,'yahoo',start_date,end_date)
+df = yf.download(user_input,'yahoo',start_date,end_date)
 
 
 st.write(df.head())
