@@ -3,4 +3,6 @@ streamlit
 numpy==1.19.5
 matplotlib
 tensorflow
+sklearn
+yfinance
 pandas_datareader==0.10.0 
