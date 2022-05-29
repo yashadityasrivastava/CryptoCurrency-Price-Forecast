@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pandas_datareader import data
 import pandas as pd 
-import sklearn
 from tensorflow.keras.models import load_model, Sequential
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
