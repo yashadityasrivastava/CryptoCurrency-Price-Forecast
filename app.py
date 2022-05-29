@@ -12,7 +12,7 @@ import pandas_datareader as web
 
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 import math
-from statsmodels.tsa.arima_model import ARIMA
+#from statsmodels.tsa.arima_model import ARIMA
 
 
 import streamlit as st
