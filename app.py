@@ -2,13 +2,12 @@ import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 from pandas_datareader import data
-import pandas as pd
-import tensorflow as tf 
+import pandas as pd 
 import sklearn
 from tensorflow.keras.models import load_model, Sequential
 from sklearn.preprocessing import MinMaxScaler
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense,LSTM,Dropout
+from keras.models import Sequential
+from keras.layers import Dense,LSTM,Dropout
 import yfinance as yf
 import pandas_datareader as web
 
