@@ -3,10 +3,10 @@ import numpy as np
 #import matplotlib.pyplot as plt
 #from pandas_datareader import data
 import pandas as pd
-from keras.models import load_model, Sequential
+from tensorflow.keras.models import load_model, Sequential
 from sklearn.preprocessing import MinMaxScaler
-from keras.models import Sequential
-from keras.layers import Dense,LSTM,Dropout
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense,LSTM,Dropout
 import yfinance as yf
 import pandas_datareader as web
 
