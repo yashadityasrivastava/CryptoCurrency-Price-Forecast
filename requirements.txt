@@ -6,4 +6,4 @@ tensorflow
 sklearn
 yfinance 
 pandas_datareader
-ARIMA
+statsmodels
