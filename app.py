@@ -12,7 +12,10 @@ import pandas_datareader as web
 
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 import math
-from statsmodels.tsa.arima_model import ARIMA
+#from statsmodels.tsa.arima_model import ARIMA
+import statsmodels.api as sm
+import warnings
+
 
 
 import streamlit as st
@@ -179,9 +182,9 @@ testing_data = list(df[to_row:]['Close'])
 
 model_prediction = []
 n_test_obs = len(testing_data)
-
+warnings.filterwarnings("ignore")
 for i in range(n_test_obs):
-    model = ARIMA(training_data, order=(4, 1, 0))
+    model = sm.tsa.arima.ARIMA(training_data, order=(4, 1, 0))
     model_fit = model.fit()
     output = model_fit.forecast()
     yhat = list(output[0])[0]
