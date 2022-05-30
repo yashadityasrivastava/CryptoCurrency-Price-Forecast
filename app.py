@@ -27,10 +27,10 @@ user_input = st.text_input('Enter the Ticker of the Crypto','BTC-USD')
 
 start_date = st.date_input(
       "Enter start date",
-     datetime.date(2014, 01, 01))
+     datetime.date(2014, 1, 11))
 end_date = st.date_input(
       "Enter start date",
-     datetime.date(2022, 01, 01))
+     datetime.date(2022, 1, 11))
 
 #df = yf.download(user_input)
 df = yf.download(user_input,'yahoo',start_date,end_date)
