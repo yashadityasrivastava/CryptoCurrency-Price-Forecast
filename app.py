@@ -13,6 +13,8 @@ import pandas_datareader as web
 from statsmodels.tsa.arima_model import ARIMA
 from datetime import date
 import streamlit as st
+import warnings
+warnings.filterwarnings("ignore")
 
 end = '2022-05-21'
 start = '2018-01-01'
