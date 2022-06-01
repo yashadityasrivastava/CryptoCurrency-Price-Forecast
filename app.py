@@ -25,11 +25,11 @@ user_input = st.text_input('Enter the Ticker of the Crypto','BTC-USD')
 start_date = st.date_input(
       "Enter start date",
      datetime.date(2014, 1, 1))
-end_date = st.date_input(
-      "Enter start date",
-     datetime.date(2022, 1, 1))
+today = date.today()
+dff = web.DataReader(user_input,'yahoo',today)
+st.write('Today Date',today)
 
-df = web.DataReader(user_input,'yahoo',start_date,end_date)
+df = web.DataReader(user_input,'yahoo',start_date,today)
 
 
 st.write(df.head())
@@ -183,20 +183,9 @@ plt.legend()
 st.write(fig5)
 
 
-today = date.today()
-dff = web.DataReader(user_input,'yahoo',today)
-st.write('Today price of ',user_input,':',dff)
+
+st.write('Today price of ',user_input,':',dff['Close'][0])
 st.write('Future price of ',user_input,':',list(output[0])[0])
-
-
-
-
-
-
-
-
-
-
 
 
 
