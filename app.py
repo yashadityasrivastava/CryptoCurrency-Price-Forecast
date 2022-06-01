@@ -30,7 +30,10 @@ dff = web.DataReader(user_input,'yahoo',today_date)
 st.write('Today Date',today_date)
 
 df = web.DataReader(user_input,'yahoo',start_date,today_date)
+
+
 st.write(df.head())
+
 st.write(df.tail())
 
 # Visualisation
@@ -42,6 +45,7 @@ plt.xlabel('Dates')
 plt.ylabel('Closing Price')
 plt.plot(df.Close,'blue')
 st.pyplot(fig)
+
 
 #Spliting the data
 data_training = pd.DataFrame(df['Close'][0:int(len(df)*0.90)])
@@ -152,10 +156,9 @@ n_test_obs = len(testing_data)
 import warnings
 warnings.filterwarnings("ignore")
 
-
 for i in range(n_test_obs):
-    model = ARIMA(training_data, order=(1, 1, 0))
-    model_fit = model.fit()
+    model = ARIMA(training_data, order=(4, 2, 0))
+    model_fit = model.fit(disp=0)
     output = model_fit.forecast()
     yhat = list(output[0])[0]
     model_prediction.append(yhat)
@@ -184,6 +187,7 @@ today = date.today()
 dff = web.DataReader(user_input,'yahoo',today)
 st.write('Today price of ',user_input,':',dff['Close'][0])
 st.write('Future price of ',user_input,':',list(output[0])[0])
+
 
 
 
