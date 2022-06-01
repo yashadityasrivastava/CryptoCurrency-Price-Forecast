@@ -14,7 +14,9 @@ from statsmodels.tsa.arima_model import ARIMA
 from datetime import date
 import streamlit as st
 import warnings
-warnings.filterwarnings("ignore")
+warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARMA',FutureWarning)
+warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARIMA',FutureWarning)
+warnings.warn(ARIMA_DEPRECATION_WARN, FutureWarning)
 
 end = '2022-05-21'
 start = '2018-01-01'
