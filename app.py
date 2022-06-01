@@ -188,8 +188,8 @@ for i in range(n_test_obs):
     model = sm.tsa.arima.ARIMA(training_data, order=(4, 1, 0))
     model_fit = model.fit()
     output = model_fit.forecast()
-    #yhat = list(output[0])[0]
-    model_prediction.append(list(output[0])[0])
+    yhat = list(output[0])[0]
+    model_prediction.append(yhat)
     actual_test_value = testing_data[i]
     training_data.append(actual_test_value)
 
