@@ -187,18 +187,3 @@ st.write(fig5)
 st.write('Today price of ',user_input,':',dff['Close'][0])
 st.write('Future price of ',user_input,':',list(output[0])[0])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
