@@ -25,11 +25,11 @@ user_input = st.text_input('Enter the Ticker of the Crypto','BTC-USD')
 start_date = st.date_input(
       "Enter start date",
      datetime.date(2014, 1, 1))
-today_date = date.today()
-dff = web.DataReader(user_input,'yahoo',today_date)
-st.write('Today Date',today_date)
+end_date = st.date_input(
+      "Enter start date",
+     datetime.date(2022, 1, 1))
 
-df = web.DataReader(user_input,'yahoo',start_date,today_date)
+df = web.DataReader(user_input,'yahoo',start_date,end_date)
 
 
 st.write(df.head())
@@ -153,17 +153,17 @@ testing_data = list(df[to_row:]['Close'])
 model_prediction = []
 n_test_obs = len(testing_data)
 
-import warnings
-warnings.filterwarnings("ignore")
-
 for i in range(n_test_obs):
     model = ARIMA(training_data, order=(4, 2, 0))
-    model_fit = model.fit(disp=0)
+    model_fit = model.fit()
     output = model_fit.forecast()
     yhat = list(output[0])[0]
     model_prediction.append(yhat)
     actual_test_value = testing_data[i]
     training_data.append(actual_test_value)
+
+
+
 
 
 fig5 =plt.figure(figsize=(15,9))
@@ -185,8 +185,19 @@ st.write(fig5)
 
 today = date.today()
 dff = web.DataReader(user_input,'yahoo',today)
-st.write('Today price of ',user_input,':',dff['Close'][0])
+st.write('Today price of ',user_input,':',dff)
 st.write('Future price of ',user_input,':',list(output[0])[0])
+
+
+
+
+
+
+
+
+
+
+
 
 
 
