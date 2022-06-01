@@ -152,7 +152,7 @@ n_test_obs = len(testing_data)
 import warnings
 warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARMA',FutureWarning)
 warnings.filterwarnings('ignore', 'statsmodels.tsa.arima_model.ARIMA',FutureWarning)
-warnings.warn(ARIMA_DEPRECATION_WARN, FutureWarning)
+
 
 for i in range(n_test_obs):
     model = ARIMA(training_data, order=(5, 2, 0))
