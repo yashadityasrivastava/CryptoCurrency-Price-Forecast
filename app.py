@@ -10,7 +10,7 @@ from keras.models import Sequential
 from keras.layers import Dense,LSTM,Dropout
 import yfinance as yf
 import pandas_datareader as web
-statsmodels.tsa.arima.model.ARIMA
+from statsmodels.tsa.arima_model import ARIMA
 from datetime import date
 import streamlit as st
 
