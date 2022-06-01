@@ -154,7 +154,7 @@ warnings.filterwarnings("ignore")
 
 
 for i in range(n_test_obs):
-    model = ARIMA(training_data, order=(5, 2, 0))
+    model = ARIMA(training_data, order=(1, 1, 0))
     model_fit = model.fit()
     output = model_fit.forecast()
     yhat = list(output[0])[0]
