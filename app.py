@@ -141,49 +141,49 @@ plt.ylabel('Price')
 plt.legend()
 st.pyplot(fig2)
 
-st.write('ARIMA model')
+#st.write('ARIMA model')
 
 # train test split
-to_row = int(len(df)*.90)
+#to_row = int(len(df)*.90)
 
-training_data = list(df[0:to_row]['Close'])
-testing_data = list(df[to_row:]['Close'])
-
-
-model_prediction = []
-n_test_obs = len(testing_data)
-
-for i in range(n_test_obs):
-    model = ARIMA(training_data, order=(4, 2, 0))
-    model_fit = model.fit()
-    output = model_fit.forecast()
-    yhat = list(output[0])[0]
-    model_prediction.append(yhat)
-    actual_test_value = testing_data[i]
-    training_data.append(actual_test_value)
+#training_data = list(df[0:to_row]['Close'])
+#testing_data = list(df[to_row:]['Close'])
 
 
+#model_prediction = []
+#n_test_obs = len(testing_data)
+
+#for i in range(n_test_obs):
+   # model = ARIMA(training_data, order=(4, 2, 0))
+   # model_fit = model.fit()
+    #output = model_fit.forecast()
+   # yhat = list(output[0])[0]
+    #model_prediction.append(yhat)
+    #actual_test_value = testing_data[i]
+    #training_data.append(actual_test_value)
 
 
 
-fig5 =plt.figure(figsize=(15,9))
-plt.grid(True)
-
-data_range = df[to_row:].index
-
-plt.plot(data_range, model_prediction,color = 'blue',label = 'predicted price')
-plt.plot(data_range, testing_data,color = 'red', label = 'original price')
 
 
+#fig5 =plt.figure(figsize=(15,9))
+#plt.grid(True)
 
-plt.title('Price Prediction '+user_input +' ARIMA model')
-plt.xlabel('Date')
-plt.ylabel('Price')
-plt.legend()
-st.write(fig5)
+#data_range = df[to_row:].index
+
+#plt.plot(data_range, model_prediction,color = 'blue',label = 'predicted price')
+#plt.plot(data_range, testing_data,color = 'red', label = 'original price')
 
 
 
-st.write('Today price of ',user_input,':',dff['Close'][0])
-st.write('Future price of ',user_input,':',list(output[0])[0])
+#plt.title('Price Prediction '+user_input +' ARIMA model')
+#plt.xlabel('Date')
+#plt.ylabel('Price')
+#plt.legend()
+#st.write(fig5)
+
+
+
+#st.write('Today price of ',user_input,':',dff['Close'][0])
+#st.write('Future price of ',user_input,':',list(output[0])[0])
 
